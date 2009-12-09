@@ -5,7 +5,7 @@
 
 BITS = [16, 8, 4, 2, 1];
 
-BASE32 = 											   "0123456789bcdefghjkmnpqrstuvwxyz";
+BASE32 = "0123456789bcdefghjkmnpqrstuvwxyz";
 NEIGHBORS = { right  : { even :  "bc01fg45238967deuvhjyznpkmstqrwx" },
 							left   : { even :  "238967debc01fg45kmstqrwxuvhjyznp" },
 							top    : { even :  "p0r21436x8zb9dcf5h7kjnmqesgutwvy" },
@@ -50,7 +50,7 @@ function decodeGeoHash(geohash) {
 	lat_err = 90.0;  lon_err = 180.0;
 	
 	for (i=0; i<geohash.length; i++) {
-		c = geohash[i];
+		c = geohash.charAt(i);
 		cd = BASE32.indexOf(c);
 		for (j=0; j<5; j++) {
 			mask = BITS[j];
